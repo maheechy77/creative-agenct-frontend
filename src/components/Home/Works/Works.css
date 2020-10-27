@@ -1,0 +1,16 @@
+.works {
+	height: 650px;
+	background-color: #111430;
+	color: white;
+}
+.carousel.carousel-slider {
+	height: 400px !important;
+}
+.carousel .slide {
+	background-color: transparent !important;
+}
+
+.custom_carousel > img {
+	height: 365px;
+	overflow: hidden;
+}

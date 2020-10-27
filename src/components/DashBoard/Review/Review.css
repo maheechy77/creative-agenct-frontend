@@ -1,0 +1,14 @@
+.review_title {
+	height: 70px;
+}
+
+.review {
+	background-color: #f4f7fc;
+	height: 100vh;
+}
+
+.form-control {
+	border: none;
+	padding: 2rem 0.75rem;
+	border-radius: 10px;
+}

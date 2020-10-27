@@ -1,0 +1,9 @@
+.client {
+	padding: 20px;
+	border: 1px solid lightgray;
+	height: 250px;
+}
+
+.client_info > img {
+	height: 70px;
+}

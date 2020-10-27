@@ -1,0 +1,22 @@
+.services {
+	height: auto;
+	margin-top: 50px;
+}
+
+.box {
+	padding: 25px;
+	height: 250px;
+	width: 150px;
+}
+.box:hover {
+	box-shadow: 2px 5px 16px 0px lightgray;
+	transition: all 1s;
+}
+
+.box > img {
+	height: 70px;
+}
+
+.box > h5 {
+	font-size: 20px;
+}

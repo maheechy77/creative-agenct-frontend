@@ -1,0 +1,14 @@
+.banner_title {
+	font-size: 50px !important;
+	font-weight: bold;
+	padding: 0 5px;
+	color: #111430;
+}
+.banner_logos {
+	height: 200px;
+	margin-top: 90px;
+}
+
+.banner_logos > img {
+	height: 50px;
+}

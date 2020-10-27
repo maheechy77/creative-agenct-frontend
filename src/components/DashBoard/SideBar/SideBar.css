@@ -1,0 +1,15 @@
+.menus > a {
+	color: gray;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.menus > a:active,
+.menus > a:hover {
+	color: #169d54;
+}
+
+.sidebar > img {
+	height: auto;
+	max-height: 70px;
+}

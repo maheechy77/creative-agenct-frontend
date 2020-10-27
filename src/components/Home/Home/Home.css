@@ -1,0 +1,20 @@
+.header_background {
+	background-color: #fbd062;
+	height: 600px;
+	position: relative;
+}
+/* 
+.header_background:after,
+.header_background:before {
+	content: "";
+	position: absolute;
+	height: 100px;
+	bottom: -70px;
+	right: 0;
+	left: 0;
+	background: #fff;
+	transform: skewY(-2deg);
+	-webkit-transform: skewY(-2deg);
+	-moz-transform: skewY(-2deg);
+	-ms-transform: skewY(-2deg);
+} */
