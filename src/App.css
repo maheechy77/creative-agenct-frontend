@@ -3,6 +3,12 @@
 	color: white;
 }
 
+.primary-button:hover {
+	background-color: white;
+	color: #111430;
+	transition: all 0.5s linear;
+}
+
 .primary-background {
 	background-color: #fbd062;
 }

@@ -18,3 +18,9 @@ thead {
 	background-color: #f4f7fc;
 	border-radius: 10px !important;
 }
+
+td select {
+	color: inherit !important;
+	border: none;
+	outline: none;
+}

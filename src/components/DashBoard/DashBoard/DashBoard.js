@@ -8,8 +8,13 @@ import Review from "../Review/Review";
 import AdminServiceList from "../AdminServiceList/AdminServiceList";
 import AddServices from "../AddServices/AddServices";
 import AddAdmin from "../AddAdmin/AddAdmin";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../../features/userSlice";
+import ProtectedRoute from "../../../ProtectedRoute";
 
 const DashBoard = () => {
+	const user = useSelector(selectUser);
+
 	return (
 		<div className="userDashBoard row ml-3 mt-3 ">
 			<Router>
@@ -17,24 +22,31 @@ const DashBoard = () => {
 					<SideBar />
 				</div>
 				<Switch>
-					<Route path="/user">
-						<Order />
-					</Route>
-					<Route path="/servicelist">
-						<ServiceTaken />
-					</Route>
-					<Route path="/review">
-						<Review />
-					</Route>
-					<Route path="/adminServicelist">
-						<AdminServiceList />
-					</Route>
-					<Route path="/addservices">
-						<AddServices />
-					</Route>
-					<Route path="/addadmin">
-						<AddAdmin />
-					</Route>
+					{user?.isAdmin === false ? (
+						<>
+							<Route exact path="/dashboard/">
+								<Order />
+							</Route>
+							<ProtectedRoute path="/dashboard/servicelist/:userId">
+								<ServiceTaken />
+							</ProtectedRoute>
+							<ProtectedRoute path="/dashboard/review">
+								<Review />
+							</ProtectedRoute>
+						</>
+					) : (
+						<>
+							<Route exact path="/dashboard/">
+								<AdminServiceList />
+							</Route>
+							<ProtectedRoute path="/dashboard/addservices">
+								<AddServices />
+							</ProtectedRoute>
+							<ProtectedRoute path="/dashboard/addadmin">
+								<AddAdmin />
+							</ProtectedRoute>
+						</>
+					)}
 				</Switch>
 			</Router>
 		</div>

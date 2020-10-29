@@ -1,38 +1,61 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Services.css";
+import axios from "../../../axios";
+import Service from "../Service/Service";
+import { serviceTaken } from "../../../features/userSlice";
+import { useDispatch } from "react-redux";
+import { BoxLoading } from "react-loadingg";
 
 const Services = () => {
+	const [servicesData, setServicesData] = useState([]);
+	const dispatch = useDispatch();
+
+	const syncService = () => {
+		axios.get("/retrive/services").then((res) => {
+			setServicesData(res.data);
+		});
+	};
+
+	useEffect(() => {
+		syncService();
+	}, []);
+
+	const dispatchData = (title, imgName, description) => {
+		dispatch(
+			serviceTaken({
+				title: title,
+				imgName: imgName,
+				description: description,
+			})
+		);
+	};
 	return (
 		<div className="services mb-5">
 			<h2 className="text-center">
 				Provide Awesome <span className="green">Services</span>
 			</h2>
-			<div className="row d-flex align-items-center mt-5">
-				<div className="col-md-3 col-sm-6 col-12 text-center box">
-					<img src="https://i.ibb.co/qBTyprn/service1.png" />
-					<h5 className="font-weight-bold">Web Design & Mobile Design</h5>
-					<p className="text-muted">
-						We provide stunning and amazing web ui using a well drafted ux to
-						fit your project.
-					</p>
+			{servicesData.length === 0 ? (
+				<BoxLoading />
+			) : (
+				<div className="row d-flex align-items-center mt-5">
+					{servicesData.map((entry) => (
+						<div
+							className="col-md-3 col-sm-6 col-12 text-center box"
+							onClick={() =>
+								dispatchData(entry.title, entry.imgName, entry.description)
+							}
+						>
+							<Service
+								key={entry._id}
+								title={entry.title}
+								imgName={entry.imgName}
+								description={entry.description}
+							/>
+						</div>
+					))}
 				</div>
-				<div className="col-md-3 col-sm-6 col-12 offset-md-1 text-center box">
-					<img src="https://i.ibb.co/Xy8jZxY/service2.png" />
-					<h5 className="font-weight-bold">Graphic Design</h5>
-					<p className="text-muted">
-						Amazing flyers, social media posts and brand representations that
-						would make your brand stand out.
-					</p>
-				</div>
-				<div className="col-md-3 col-sm-6 col-12 offset-md-1 text-center box">
-					<img src="https://i.ibb.co/khgwyyL/service3.png" />
-					<h5 className="font-weight-bold">Web Development</h5>
-					<p className="text-muted">
-						With well written code we build amazing app for all platforms,mobile
-						and web app is general.
-					</p>
-				</div>
-			</div>
+			)}
 		</div>
 	);
 };

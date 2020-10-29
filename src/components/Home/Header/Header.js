@@ -1,6 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
+import { selectUser } from "../../../features/userSlice";
+import { auth } from "../../../firebase";
 
 const Header = () => {
+	const user = useSelector(selectUser);
+
 	return (
 		<div>
 			<nav className="navbar navbar-expand-lg navbar-light d-flex justify-content-between ">
@@ -33,13 +39,20 @@ const Header = () => {
 								Contact-Us
 							</a>
 						</li>
-						<li className="nav-item mx-2">
-							<button
-								className="btn primary-button my-2 my-sm-0 px-5"
-								type="submit"
-							>
-								Log-In
-							</button>
+						<li className="nav-item flex-start mx-2">
+							{user ? (
+								<>
+									<Link to={`/dashboard/`}>
+										<h4>{user.displayName}</h4>
+									</Link>
+								</>
+							) : (
+								<>
+									<Link to="/login">
+										<button className="btn primary-button">Login</button>
+									</Link>
+								</>
+							)}
 						</li>
 					</ul>
 				</div>

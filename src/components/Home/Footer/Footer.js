@@ -9,39 +9,41 @@ const Footer = () => {
 					<div className="footer_contactInfo col-md-5 com-sm-12">
 						<h2>Let us Handle your project, professionally</h2>
 						<p>
-							With well written code we build amazing app for all
+							With well written code we build amazing app htmlFor all
 							platforms,mobile and web app is general.
 						</p>
 					</div>
 					<div className="footer_form col-md-5 com-sm-12">
 						<form>
-							<div class="form-group">
-								<label for="exampleInputEmail1">Your Email address</label>
+							<div className="form-group">
+								<label htmlFor="exampleInputEmail1">Your Email address</label>
 								<input
 									type="email"
-									class="form-control"
+									className="form-control"
 									id="exampleInputEmail1"
 								/>
 							</div>
-							<div class="form-group">
-								<label for="exampleInputName1">Your Name/Company Name</label>
+							<div className="form-group">
+								<label htmlFor="exampleInputName1">
+									Your Name/Company Name
+								</label>
 								<input
 									type="text"
-									class="form-control"
+									className="form-control"
 									id="exampleInputName1"
 								/>
 							</div>
-							<div class="form-group">
-								<label for="exampleInputTextarea1">Your Message</label>
+							<div className="form-group">
+								<label htmlFor="exampleInputTextarea1">Your Message</label>
 								<textarea
 									id="exampleInputTextarea1"
-									class="form-control"
+									className="form-control"
 									rows="10"
 									cols="50"
 								/>
 							</div>
 
-							<button type="submit" class="btn primary-button px-4">
+							<button type="submit" className="btn primary-button px-4">
 								Submit
 							</button>
 						</form>

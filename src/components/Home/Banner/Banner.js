@@ -13,7 +13,7 @@ const Banner = () => {
 					amet consectetur, adipisicing elit. Dignissimos rerum minima
 					perspiciatis debitis.
 				</p>
-				<button class="btn primary-button my-2 my-sm-0 px-5" type="submit">
+				<button className="btn primary-button my-2 my-sm-0 px-5" type="submit">
 					Hire Us
 				</button>
 			</div>
