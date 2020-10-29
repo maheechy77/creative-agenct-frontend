@@ -45,7 +45,7 @@ const ServiceTaken = () => {
 									<img
 										src={
 											service?.photoURL.startsWith("image-")
-												? `http://localhost:9000/images/single?name=${service.photoURL}`
+												? `https://frozen-mesa-19521.herokuapp.com/images/single?name=${service.photoURL}`
 												: `${service.photoURL}`
 										}
 									/>

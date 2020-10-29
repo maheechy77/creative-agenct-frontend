@@ -7,7 +7,7 @@ const Service = ({ title, imgName, description }) => {
 			<img
 				src={
 					imgName.startsWith("image-")
-						? `http://localhost:9000/images/single?name=${imgName}`
+						? `https://frozen-mesa-19521.herokuapp.com/images/single?name=${imgName}`
 						: `${imgName}`
 				}
 			/>
